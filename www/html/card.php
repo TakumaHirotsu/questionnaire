@@ -28,6 +28,7 @@ if (isset($_POST["name"])) {
 <main>
     <div class="base_size center bold"><?= h($name); ?>さん</div>
     <input type="hidden" name="name" value="<?= h($name); ?>">
+    <div class="margin-top-30 center"><button onclick="confirmLabel()"/>ラベルを確認する</button></div>
     <span id="form"></span>
 </main>
 <footer>

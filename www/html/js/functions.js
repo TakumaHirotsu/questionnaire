@@ -1,30 +1,6 @@
 // 'use strict';
 
 $(function() {
-
-    function post(name, val) {
-        const action = 'finish.php';
-        const method = 'POST';
-        const data = this.$contactparam;
-        let form = document.createElement('form');
-        form.setAttribute('action', action);
-        form.setAttribute('method', method); // POSTリクエストもしくはGETリクエストを書く。
-        form.style.display = 'none'; // 画面に表示しないことを指定する
-        document.body.appendChild(form);
-        if (data !== undefined) {
-            Object.keys(data).map((key)=>{
-                let input = document.createElement('input');
-                input.setAttribute('type', 'hidden');
-                input.setAttribute('name', name); //「name」は適切な名前に変更する。
-                input.setAttribute('value', val);
-                form.appendChild(input);
-            })
-        }
-        console.log(form)
-        form.submit();
-    }
-
-
     $('#btn').click(function() {
         var row = $('*[name=current-row]').val();
         var check_num = $('*[name=radio'+row+']:checked').val();
@@ -35,10 +11,25 @@ $(function() {
             answer.push(check_num);
             row++;
             console.log(row+"枚目");
-            console.log(answer);
+            // console.log(answer);
             if (records_num<(row+1)){
                 var name = $('*[name=name]').val();
-                // post("name2", name);
+                var str_answer = answer.join(',');
+                console.log(str_answer);
+                const endpoint = "https://script.google.com/macros/s/AKfycbzSu9-V2AFfNHBu4zHe_L-bZH-CFpkZdZ3z6QMQzEDifqaTk6Cn/exec";
+                $.ajax({
+                    type: 'GET',
+                    url: endpoint,
+                    dataType: 'jsonp',
+                    data: {
+                        name: name,
+                        answer: str_answer
+                    },
+                    success: out => {
+                        console.log(out.message);
+                    }
+                });
+                location.href = 'finish.php';
             } else {
                 $("#form").load( "card-template.php", {
                     row: row
@@ -48,5 +39,8 @@ $(function() {
             }
         }
     });
-
 });
+
+function confirmLabel() {
+    window.open('label.php', '_blank', 'width=800,height=600');
+}

@@ -10,7 +10,7 @@ function h($s) {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
 
-
+//csvを読み込んで配列化
 function get_csv($csvfile, $mode="sjis") {
     // ファイル存在確認
     if(!file_exists($csvfile)) return false;
@@ -44,6 +44,33 @@ else if($mode === 'utf8') $filter = $csvfile;
     }
     return $records;
 }
+
+
+$records = get_csv('output.csv', "utf8");
+$records_num = count($records);
+
+$jpn_labels = [];
+$eng_labels = [];
+foreach ($records as $row => $key){
+    if(!(in_array($key["eng_statement"], $eng_labels, True))){
+        array_push($eng_labels, $key["eng_statement"]);
+        array_push($jpn_labels, $key["jpn_statement"]);
+    }
+}
+
+$mainArray=[];
+$num=0;
+foreach ($eng_labels as $eng_label){
+    $tmp = [ $eng_label=>[ $jpn_labels[$num], [] ] ];
+    foreach ($records as $row){
+        if($row["eng_statement"]==$eng_label){
+            array_push($tmp[$eng_label][1], $row["file_name"]);
+        }
+    }
+    array_push($mainArray, $tmp);
+    $num+=1;
+}
+
 
 
 

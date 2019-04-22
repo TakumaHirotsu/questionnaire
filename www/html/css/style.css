@@ -21,7 +21,7 @@ footer{
     width:100%;
     background:dodgerblue;
     color:#fff;
-    margin:0z;
+    margin:0;
     padding:0;
     line-height:2;
     text-align:center;
@@ -52,11 +52,12 @@ h2{
     color:red;
 }
 
-img{
-    width:50%;
-    min-width:400px;
-    max-width:800px;
-}
+/*img{*/
+    /*width:50%;*/
+    /*min-width:400px;*/
+    /*max-width:800px;*/
+/*}*/
+
 #check-form{
     display:block;
     width:50%;
@@ -67,6 +68,9 @@ img{
     width:80%;
     text-align:left;
     font-size:20px;
+}
+.hover{
+    width:100%;
 }
 .hover:hover{
     cursor : pointer;
@@ -88,4 +92,15 @@ button:hover{
     font-weight:bold;
     color:#fff;
     background-color: royalblue;
+}
+.flex-container{
+    display:flex;
+    width:80%;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+}
+
+.flex-container img{
+    margin:5px;
 }
