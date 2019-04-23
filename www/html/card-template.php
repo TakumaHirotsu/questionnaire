@@ -21,31 +21,30 @@ require_once(__DIR__ . '/functions.php');
 //}
 
 if (isset($_POST["row"])) {
-    $current_num = $_POST["row"];
-    $eng_jpn_filename = $mainArray[$current_num];
+    $current_row = $_POST["row"];
+    $eng_jpn_filename = $mainArray[$current_row];
     $eng_statement = array_keys($eng_jpn_filename)[0];
     $jpn_statement = $eng_jpn_filename[$eng_statement][0];
     $file_names = $eng_jpn_filename[$eng_statement][1];
-    $labels_num = count($mainArray);
+    $records_num = count($mainArray);
 }
 ?>
 <script type="text/javascript" src="./js/functions.js" charset="utf8"></script>
 <form id="form-box" method="post" class="center margin-top-30">
 <!--    <div class="base_size center bold"><span class="red">--><?//= h($current_row+1); ?><!--枚</span>/--><?//= h($records_num); ?><!--枚</div>-->
-    <div class="base_size center bold"><span class="red"><?= h($current_num+1); ?></span>/<?= h($labels_num); ?></div>
+    <div class="base_size center bold"><span class="red"><?= h($current_row+1); ?></span>/<?= h($records_num); ?></div>
 
     <!--画像の出力-->
     <!--    <img src="./images/--><?//= h($file_name); ?><!--" alt="--><?//= h($file_name); ?><!--" title="--><?//= h($file_name); ?><!--">-->
     <div class="flex-container">
         <?php foreach ($file_names as $file){
-            echo '<img width="20%" src="./images/'.h($file).'" alt="'.h($file).'" title="'.h($file).'">';
+            echo '<img width="19.5%" src="./images/'.h($file).'" alt="'.h($file).'" title="'.h($file).'">';
         } ?>
     </div>
-    <div class="base_size inline"><span class="bold">出力:</span>「<?= h($eng_statement); ?>」</div>
-    <div class="base_size inline" style="margin-bottom:30px;"><span class="bold">　訳:</span>(<?= h($jpn_statement); ?>)</div>
 
-
-
+    <input type="hidden" name="label" value="<?= h($eng_statement); ?>">
+    <div class="base_size inline margin-top-30"><span class="bold">出力:</span>「<?= $eng_statement ?>」</div>
+    <div class="base_size inline margin-top-30" style="margin-bottom:30px;"><span class="bold">　訳:</span>(<?= $jpn_statement ?>)</div>
 
     <div class="base_size center bold">画像と出力された有益文は適切に対応していると思う</div>
     <div id="check-form">

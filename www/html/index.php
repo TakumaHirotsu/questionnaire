@@ -23,7 +23,7 @@
 </header>
 <main>
     <div class="base_size center bold">アンケートに関する注意</div>
-    <div class="base_size center">アンケートの所要時間は<span class="bold red">30分</span>です。</div>
+    <div class="base_size center">アンケートの所要時間は<span class="bold red">10分</span>です。</div>
     <div class="base_size center">リロード・ブラウザバックすると初期化されるので注意してください。</div>
     <div class="base_size center">セッション管理等はしてないので、途中でブラウザを閉じると途中結果まで保存されてないですm(_ _)m</div>
     <div class="margin-top-30 center"><button onclick="confirmLabel()"/>ラベルを確認する</button></div>

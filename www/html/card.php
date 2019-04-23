@@ -36,6 +36,7 @@ if (isset($_POST["name"])) {
 </footer>
 <script type="text/javascript" charset="utf8">
     var answer = new Array();
+    // var labels = new Array();
     $("#form").load("card-template.php", {
         row: 0
     }, function() {

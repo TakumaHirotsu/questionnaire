@@ -99,8 +99,12 @@ button:hover{
     flex-wrap: wrap;
     justify-content:center;
     align-items: center;
+    margin:0 auto;
 }
 
 .flex-container img{
-    margin:5px;
+    margin:1px;
+    padding:0px;
+    font-size:0;
+
 }
