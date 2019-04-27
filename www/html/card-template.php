@@ -48,11 +48,11 @@ if (isset($_POST["row"])) {
 
     <div class="base_size center bold">画像と出力された有益文は適切に対応していると思う</div>
     <div id="check-form">
-        <div class="inline hover"><input type="radio" id="radio<?= h($current_row); ?>_1" name="radio<?= h($current_row); ?>" value="1"/><label for="radio<?= h($current_row); ?>_1">1. 当てはまらない</label></div>
-        <div class="inline hover"><input type="radio" id="radio<?= h($current_row); ?>_2" name="radio<?= h($current_row); ?>" value="2"/><label for="radio<?= h($current_row); ?>_2">2. あまり当てはまらない</label></div>
+        <div class="inline hover"><input type="radio" id="radio<?= h($current_row); ?>_1" name="radio<?= h($current_row); ?>" value="1"/><label for="radio<?= h($current_row); ?>_1">1. 当てはまる</label></div>
+        <div class="inline hover"><input type="radio" id="radio<?= h($current_row); ?>_2" name="radio<?= h($current_row); ?>" value="2"/><label for="radio<?= h($current_row); ?>_2">2. 少し当てはまる</label></div>
         <div class="inline hover"><input type="radio" id="radio<?= h($current_row); ?>_3" name="radio<?= h($current_row); ?>" value="3"/><label for="radio<?= h($current_row); ?>_3">3. どちらとも言えない</label></div>
-        <div class="inline hover"><input type="radio" id="radio<?= h($current_row); ?>_4" name="radio<?= h($current_row); ?>" value="4"/><label for="radio<?= h($current_row); ?>_4">4. 少し当てはまる</label></div>
-        <div class="inline hover"><input type="radio" id="radio<?= h($current_row); ?>_5" name="radio<?= h($current_row); ?>" value="5"/><label for="radio<?= h($current_row); ?>_5">5. 当てはまる</label></div>
+        <div class="inline hover"><input type="radio" id="radio<?= h($current_row); ?>_4" name="radio<?= h($current_row); ?>" value="4"/><label for="radio<?= h($current_row); ?>_4">4. あまり当てはまらない</label></div>
+        <div class="inline hover"><input type="radio" id="radio<?= h($current_row); ?>_5" name="radio<?= h($current_row); ?>" value="5"/><label for="radio<?= h($current_row); ?>_5">5. 当てはまらない</label></div>
     </div>
     <input type="hidden" name="current-row" value="<?= h($current_row); ?>">
     <input type="hidden" name="records-num" value="<?= h($records_num); ?>">
