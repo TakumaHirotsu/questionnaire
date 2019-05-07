@@ -7,7 +7,7 @@ $(function() {
         var records_num = $('*[name=records-num]').val();
         // var label = $('*[name=label]').val();
         if (check_num === undefined) {
-            alert("アンケートに回答してください")
+            alert("Please answer the questionnaire(アンケートに回答してください)")
         }　else {
             answer.push(check_num);
             // labels.push(label);
