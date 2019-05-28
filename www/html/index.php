@@ -28,7 +28,6 @@
     <div class="base_size center">システムが対応していない画像に対しては「有益文はありません。」が出力されます。</div>
     <div class="base_size center">リロード・ブラウザバックすると初期化されるので注意してください。</div>
     <div class="base_size center">セッション管理等はしてないので、途中でブラウザを閉じると途中結果まで保存されてないですm(_ _)m</div>
-    <div class="base_size center">無料サーバだからかネット環境にかかわらず画像の読み込みが遅いです</div>
     <div class="margin-top-30 center"><button onclick="confirmLabel()"/>ラベルを確認する</button></div>
 
     <form id="form_name" action="card.php" method="post" style="margin-top:30px;">

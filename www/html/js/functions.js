@@ -15,6 +15,7 @@ $(function() {
             console.log(row+"枚目");
             // console.log(answer);
             if (records_num<(row+1)){
+            //if (row<2){
                 var name = $('*[name=name]').val();
                 var str_answer = answer.join(',');
                 // var str_labels = labels.join(',');
@@ -34,7 +35,8 @@ $(function() {
                         console.log(out.message);
                     }
                 });
-                location.href = 'finish.php';
+                //location.href = 'finish.php';
+                alert("以上でアンケートは終了です。ありがとうございました！");
             } else {
                 $("#form").load( "card-template.php", {
                     row: row
